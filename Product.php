@@ -14,6 +14,6 @@ class Product{
     // function add to cart
     // this function will create a cart item and return it
     public  function addToCart(){
-
+        $cart = new Cart();
     }
 }
