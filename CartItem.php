@@ -8,5 +8,5 @@ class CartItem{
     public function __construct(Product $product, $quantity){
         $this->product = $product;
         $this->quantity = $quantity;
-    }
+    } 
 }
