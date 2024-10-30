@@ -8,6 +8,4 @@ $cartItem = new CartItem($product,2);
 $cartItem =$cartItem->$product->addToCart();
 $cart = new Cart();
 
-echo json_encode([
-    $cart
-]);
+var_dump($cart);
