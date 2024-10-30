@@ -6,9 +6,9 @@ class Product{
     public $id;
     public $price;
     public $name;
-    public function __construct($id, $name, $price){
+    public function __construct($name, $price, $id = null) {
         $this->name = $name;
-        $this->id = $id;
+        $this->id =$id ?? uniqid();
         $this->price = $price;
     }
     // function add to cart
