@@ -10,5 +10,7 @@ $cartItem = new CartItem($product,2);
 $cartItem2 = new CartItem($product2, 1);
 $cart->addCartItem($cartItem);
 $cart->addCartItem($cartItem2);
+$searchedProduct = $cart->searchCart($product2->id);
 
-print_r($cart);
+// print_r($cart);
+print_r($searchedProduct);
