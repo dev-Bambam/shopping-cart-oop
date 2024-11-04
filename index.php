@@ -3,9 +3,12 @@ require_once 'Product.php';
 require_once 'CartItem.php';
 require_once 'Cart.php';
 
-$product = new Product("Samsung", 3500);
-$cartItem = new CartItem($product,2);
-// $cartItem =$cartItem->$product->addToCart();
 $cart = new Cart();
+$product = new Product("Samsung", 3500,uniqid());
+$product2 = new Product("Iphone", 4500, uniqid());
+$cartItem = new CartItem($product,2);
+$cartItem2 = new CartItem($product2, 1);
+$cart->addCartItem($cartItem);
+$cart->addCartItem($cartItem2);
 
-var_dump($cart);
+print_r($cart);

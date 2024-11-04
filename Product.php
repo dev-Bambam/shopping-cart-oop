@@ -2,13 +2,13 @@
 class Product{
     /* todo 
     **@properties: id, price, name
-    */
+    */     
     public $id;
     public $price;
     public $name;
-    public function __construct($name, $price, $id = null) {
+    public function __construct($name, $price, $id) {
         $this->name = $name;
-        $this->id =$id ?? uniqid();
+        $this->id =$id; 
         $this->price = $price;
     }
     // function add to cart
