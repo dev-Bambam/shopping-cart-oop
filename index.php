@@ -5,7 +5,7 @@ require_once 'Cart.php';
 
 $product = new Product("Samsung", 3500);
 $cartItem = new CartItem($product,2);
-$cartItem =$cartItem->$product->addToCart();
+// $cartItem =$cartItem->$product->addToCart();
 $cart = new Cart();
 
 var_dump($cart);
