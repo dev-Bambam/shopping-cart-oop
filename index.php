@@ -5,6 +5,10 @@ require_once 'Cart.php';
 
 $cart = new Cart();
 $product = new Product("Samsung", 3500,uniqid());
-$cartItem = new CartItem($product,8);
+$product2 = new Product("Tecno", 7500,uniqid());
+$cartItem = new CartItem($product,2);
+$cartItem2 = new CartItem($product2,1);
 $cart->addCartItem($cartItem);
+$cart->addCartItem($cartItem2);
 print_r($cart);
+// echo " this is $product->id";

@@ -15,5 +15,9 @@ class Product{
     public function setId($id){
         $this->id = $id;
     }
+    // method to get id
+    public function getId(){
+        return $this->id;
+    }
 }
         

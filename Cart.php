@@ -7,7 +7,8 @@ class Cart{
     }
     public function addCartItem(CartItem $cartItem) {
         foreach ($cartItem->getProducts() as $product) {
-            array_push($this->cart, $product);
+            $productId = $product->getId();
+            $this->cart[$productId] = $product;
         }
     }
     // remove cartItem
