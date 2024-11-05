@@ -2,11 +2,17 @@
 class CartItem {
     // @param:Product product, quantity;
     // @methods: increaseQuantity(), decreaseQuantity();
-    public Product $product; 
-    public int $quantity;
+    private  $products = []; 
 
-    public function __construct(Product $product, $quantity=1){
-        $this->product = $product;
-        $this->quantity = $quantity;
-    } 
+    public function __construct(Product $product, $quantity = 1)
+    {
+        for ($i = 0; $i < $quantity; $i++) {
+            $this->products[] = clone $product;
+            $this->products[count($this->products) - 1]->setId(uniqid());
+        }
+    }
+    // method to get product
+    public function getProducts(){
+        return $this->products;
+    }
 }

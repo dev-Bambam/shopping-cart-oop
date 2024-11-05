@@ -6,7 +6,14 @@ class Cart{
         return $this->cart[$id] ?? null;
     }
     public function addCartItem(CartItem $cartItem) {
-        $productId = $cartItem->product->id;
-        $this->cart[$productId] = $cartItem;
+        foreach ($cartItem->getProducts() as $product) {
+            array_push($this->cart, $product);
+        }
+    }
+    // remove cartItem
+    public function remCartItem($id){
+        unset(
+            $this->cart[$id]
+        );
     }
 }

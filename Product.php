@@ -11,13 +11,9 @@ class Product{
         $this->id =$id; 
         $this->price = $price;
     }
-    // function add to cart
-    // this function will create a cart item and return it
-    public function addToCart()
-    {
-        $cart = new Cart();
-        $cartItem = new CartItem($this);
-        $cart->addCartItem($cartItem);
+    // method to set id
+    public function setId($id){
+        $this->id = $id;
     }
 }
         
