@@ -41,4 +41,23 @@ class Database
     {
         $this->pdo = null;
     }
+    public function insert($table, $data)
+    {
+        $sql = "INSERT INTO $table (" . implode(', ', array_keys($data)) . ") VALUES ('" . implode("', '", array_values($data)) . "')";
+        $this->query($sql);
+    }
+
+    public function update($table, $data, $where)
+    {
+        $sql = "UPDATE $table SET " . implode(', ', array_map(function ($key, $value) {
+            return "$key = '$value'";
+        }, array_keys($data), array_values($data))) . " WHERE $where";
+        $this->query($sql);
+    }
+
+    public function delete($table, $where)
+    {
+        $sql = "DELETE FROM $table WHERE $where";
+        $this->query($sql);
+    }
 }
