@@ -17,4 +17,22 @@ class Cart{
             $this->cart[$id]
         );
     }
+    public function getQuantity($productName = null)
+    {
+        if ($productName) {
+            $quantity = 0;
+            foreach ($this->cart as $item) {
+                if ($item->getProductName() == $productName) {
+                    $quantity += $item->getQuantity();
+                }
+            }
+            return $quantity;
+        } else {
+            $totalQuantity = 0;
+            foreach ($this->cart as $item) {
+                $totalQuantity += $item->getQuantity();
+            }
+            return $totalQuantity;
+        }
+    }
 }
