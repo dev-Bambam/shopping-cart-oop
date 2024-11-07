@@ -17,6 +17,12 @@ class Cart{
             $this->cart[$id]
         );
     }
+    /**
+     * Retrieves the total quantity of products in the cart or the quantity of a specific product.
+     *
+     * @param string|null $productName The name of the product to get the quantity for. If null, retrieves the total quantity of all products.
+     * @return int The quantity of the specified product or the total quantity of all products in the cart.
+     */
     public function getQuantity($productName = null)
     {
         if ($productName) {
