@@ -5,6 +5,11 @@ class Cart{
     public function searchCart($id) {
         return $this->cart[$id] ?? null;
     }
+    /**
+     * Adds a CartItem to the cart.
+     *
+     * @param CartItem $cartItem The CartItem to be added.
+     */
     public function addCartItem(CartItem $cartItem) {
         foreach ($cartItem->getProducts() as $product) {
             $productId = $product->getId();
@@ -23,7 +28,7 @@ class Cart{
      * @param string|null $productName The name of the product to get the quantity for. If null, retrieves the total quantity of all products.
      * @return int The quantity of the specified product or the total quantity of all products in the cart.
      */
-    public function getQuantity($productName = null)
+     public function getQuantity($productName = null)
     {
         if ($productName) {
             $quantity = 0;
